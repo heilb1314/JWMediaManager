@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		14EA4AAF2791B530C1F009EE13A517BF /* Pods-JWMediaManager_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB96C9001E6764981F18F45046279463 /* Pods-JWMediaManager_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		25D987F16CBE1E87159BDB1AC8D49433 /* JWMediaManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E9D151CC2F7B83338064AB1E7FDAFB6 /* JWMediaManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26BF976F1E562C5B003FEABB /* MediaPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF976E1E562C5B003FEABB /* MediaPlayerManager.swift */; };
 		284D99933BE07A387B88DF165065FFDD /* JWMediaManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAA7E5A6C97832DECBCA7B007425996 /* JWMediaManager-dummy.m */; };
-		35ED54E13A2F5094766F2C67624010E8 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638424715D22C1C644DB131EF3D4BBF /* ReplaceMe.swift */; };
 		376B33AFBF27163C74B2ECB51D5DF67F /* Pods-JWMediaManager_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F13485A8911FACF926C33B8629DF6A /* Pods-JWMediaManager_Tests-dummy.m */; };
 		6F867A43884249AFAA3CC397C3D74DD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		72CBE5B5D3E1C45A822359353EA846E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
@@ -36,6 +36,7 @@
 		1467D027CB9771E9BEAAFC7234DC321A /* Pods_JWMediaManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JWMediaManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1496FC93875ED93938DDC92937856441 /* Pods-JWMediaManager_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JWMediaManager_Example-umbrella.h"; sourceTree = "<group>"; };
 		1C1FFA1270443E4B00B36134462358E1 /* Pods-JWMediaManager_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JWMediaManager_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		26BF976E1E562C5B003FEABB /* MediaPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayerManager.swift; sourceTree = "<group>"; };
 		2967B102C54B5808CEC312ACACCEAB34 /* Pods-JWMediaManager_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JWMediaManager_Example-resources.sh"; sourceTree = "<group>"; };
 		431926A13492153362A7AEEBE0AE6CE8 /* Pods-JWMediaManager_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JWMediaManager_Example-dummy.m"; sourceTree = "<group>"; };
 		43DB038540C7A8DF56296EC936D98008 /* Pods-JWMediaManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JWMediaManager_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		D7BA7DFBF07288A008B1689DAFD10A3D /* Pods-JWMediaManager_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JWMediaManager_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E0F13485A8911FACF926C33B8629DF6A /* Pods-JWMediaManager_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JWMediaManager_Tests-dummy.m"; sourceTree = "<group>"; };
 		F3DD08DAB0083C38765308ACE06EE892 /* Pods-JWMediaManager_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JWMediaManager_Example-frameworks.sh"; sourceTree = "<group>"; };
-		F638424715D22C1C644DB131EF3D4BBF /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		FB96C9001E6764981F18F45046279463 /* Pods-JWMediaManager_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JWMediaManager_Tests-umbrella.h"; sourceTree = "<group>"; };
 		FD58C7F1B95AAA1E5B9003CAFBB3A148 /* Pods-JWMediaManager_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JWMediaManager_Example.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +95,7 @@
 		02FC68A7829C41BD987C9038D991615B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F638424715D22C1C644DB131EF3D4BBF /* ReplaceMe.swift */,
+				26BF976D1E562C46003FEABB /* MediaManager */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -122,6 +122,14 @@
 			);
 			name = JWMediaManager;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		26BF976D1E562C46003FEABB /* MediaManager */ = {
+			isa = PBXGroup;
+			children = (
+				26BF976E1E562C5B003FEABB /* MediaPlayerManager.swift */,
+			);
+			name = MediaManager;
 			sourceTree = "<group>";
 		};
 		5897EF8D82DE6825D23786643B370081 /* Development Pods */ = {
@@ -357,7 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				284D99933BE07A387B88DF165065FFDD /* JWMediaManager-dummy.m in Sources */,
-				35ED54E13A2F5094766F2C67624010E8 /* ReplaceMe.swift in Sources */,
+				26BF976F1E562C5B003FEABB /* MediaPlayerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02C808BF78192ED95BF7068A6D135112 /* JWMediaManager.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -491,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02C808BF78192ED95BF7068A6D135112 /* JWMediaManager.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";

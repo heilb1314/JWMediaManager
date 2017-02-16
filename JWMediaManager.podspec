@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'JWMediaManager'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of JWMediaManager.'
+  s.summary          = 'A custom AVPlayer Manager'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+JWMediaManager give the functionalities for AVPlayer more easy to use.
                        DESC
 
-  s.homepage         = 'https://github.com/heilb1314@hotmail.com/JWMediaManager'
+  s.homepage         = 'https://github.com/heilb1314/JWMediaManager'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'heilb1314@hotmail.com' => 'heilb1314@hotmail.com' }
-  s.source           = { :git => 'https://github.com/heilb1314@hotmail.com/JWMediaManager.git', :tag => s.version.to_s }
+  s.author           = { 'Jianxiong Wang' => 'heilb1314@hotmail.com' }
+  s.source           = { :git => 'https://github.com/heilb1314/JWMediaManager.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
@@ -37,6 +37,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'AVFoundation'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

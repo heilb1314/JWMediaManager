@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26BF97771E562CE4003FEABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26BF97701E562CE4003FEABB /* Assets.xcassets */; };
+		26BF97781E562CE4003FEABB /* becauseOfYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26BF97711E562CE4003FEABB /* becauseOfYou.mp3 */; };
+		26BF97791E562CE4003FEABB /* heartbeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26BF97721E562CE4003FEABB /* heartbeat.mp3 */; };
+		26BF977A1E562CE4003FEABB /* JWPlayerTrackSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF97731E562CE4003FEABB /* JWPlayerTrackSlider.swift */; };
+		26BF977B1E562CE4003FEABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BF97741E562CE4003FEABB /* Main.storyboard */; };
+		26BF977C1E562CE4003FEABB /* stronger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26BF97751E562CE4003FEABB /* stronger.mp3 */; };
+		26BF977D1E562CE4003FEABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF97761E562CE4003FEABB /* ViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
-		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		67CA89C791B179A1425F7B28 /* Pods_JWMediaManager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A397BD74F32F408D84B3BF /* Pods_JWMediaManager_Example.framework */; };
@@ -29,13 +33,17 @@
 
 /* Begin PBXFileReference section */
 		2487CB13ADD16B2DDAA7427E /* Pods-JWMediaManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Example/Pods-JWMediaManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		26BF97701E562CE4003FEABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26BF97711E562CE4003FEABB /* becauseOfYou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = becauseOfYou.mp3; sourceTree = "<group>"; };
+		26BF97721E562CE4003FEABB /* heartbeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = heartbeat.mp3; sourceTree = "<group>"; };
+		26BF97731E562CE4003FEABB /* JWPlayerTrackSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWPlayerTrackSlider.swift; sourceTree = "<group>"; };
+		26BF97741E562CE4003FEABB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		26BF97751E562CE4003FEABB /* stronger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stronger.mp3; sourceTree = "<group>"; };
+		26BF97761E562CE4003FEABB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		361A0682019B09A73F34B733 /* Pods-JWMediaManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Tests/Pods-JWMediaManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* JWMediaManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JWMediaManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* JWMediaManager_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWMediaManager_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +77,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26BF977E1E562CED003FEABB /* musics */ = {
+			isa = PBXGroup;
+			children = (
+				26BF97711E562CE4003FEABB /* becauseOfYou.mp3 */,
+				26BF97721E562CE4003FEABB /* heartbeat.mp3 */,
+				26BF97751E562CE4003FEABB /* stronger.mp3 */,
+			);
+			name = musics;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -94,10 +112,12 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				26BF97761E562CE4003FEABB /* ViewController.swift */,
+				26BF97731E562CE4003FEABB /* JWPlayerTrackSlider.swift */,
+				26BF97701E562CE4003FEABB /* Assets.xcassets */,
+				26BF97741E562CE4003FEABB /* Main.storyboard */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				26BF977E1E562CED003FEABB /* musics */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for JWMediaManager";
@@ -248,9 +268,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				26BF97781E562CE4003FEABB /* becauseOfYou.mp3 in Resources */,
+				26BF977B1E562CE4003FEABB /* Main.storyboard in Resources */,
+				26BF977C1E562CE4003FEABB /* stronger.mp3 in Resources */,
+				26BF97771E562CE4003FEABB /* Assets.xcassets in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				26BF97791E562CE4003FEABB /* heartbeat.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +384,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				26BF977D1E562CE4003FEABB /* ViewController.swift in Sources */,
+				26BF977A1E562CE4003FEABB /* JWPlayerTrackSlider.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,14 +409,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
