@@ -1,0 +1,6 @@
+framework module JWMediaManager {
+  umbrella header "JWMediaManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

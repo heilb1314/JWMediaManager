@@ -1,0 +1,22 @@
+{
+  "name": "JWMediaManager",
+  "version": "0.1.0",
+  "summary": "A short description of JWMediaManager.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/heilb1314@hotmail.com/JWMediaManager",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "heilb1314@hotmail.com": "heilb1314@hotmail.com"
+  },
+  "source": {
+    "git": "https://github.com/heilb1314@hotmail.com/JWMediaManager.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JWMediaManager/Classes/**/*"
+}

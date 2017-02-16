@@ -1,0 +1,16 @@
+PODS:
+  - JWMediaManager (0.1.0)
+
+DEPENDENCIES:
+  - JWMediaManager (from `../`)
+
+EXTERNAL SOURCES:
+  JWMediaManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JWMediaManager: c93f60a809a9a7f4f15addc1cabc80fb1d5ccaad
+
+PODFILE CHECKSUM: 6296065af1312fc88202974c8244114900b1e699
+
+COCOAPODS: 1.2.0
