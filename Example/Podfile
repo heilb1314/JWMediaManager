@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JWMediaManager_Example' do
+  pod 'JWMediaManager', :path => '../'
+
+  target 'JWMediaManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
