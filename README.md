@@ -11,6 +11,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+* iOS 8.0+
+* XCode 8.1+
+* Swift 3.0+
+
 ## Installation
 
 JWMediaManager is available through [CocoaPods](http://cocoapods.org). To install
@@ -20,7 +24,7 @@ it, simply add the following line to your Podfile:
 pod "JWMediaManager"
 ```
 
-## Use
+## Usage
 
 Make sure to `import JWMediaManager` first.
 
