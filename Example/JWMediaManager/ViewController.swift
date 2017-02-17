@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         guard let path3 = Bundle.main.path(forResource: "becauseOfYou", ofType: "mp3") else { return }
         arr = [path1,path2,path3].map{URL(fileURLWithPath: $0)}
         playerManager.setPlayer(with: arr, playAt: 0)
+        playerManager.setPlayMode(to: .shuffle)
     }
 
     // Slider Methods

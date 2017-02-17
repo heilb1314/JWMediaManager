@@ -1,6 +1,6 @@
 # JWMediaManager
 
-[![CI Status](http://img.shields.io/travis/heilb1314@hotmail.com/JWMediaManager.svg?style=flat)](https://travis-ci.org/heilb1314@hotmail.com/JWMediaManager)
+[![CI Status](http://img.shields.io/travis/heilb1314/JWMediaManager.svg?style=flat)](https://travis-ci.org/heilb1314/JWMediaManager)
 [![Version](https://img.shields.io/cocoapods/v/JWMediaManager.svg?style=flat)](http://cocoapods.org/pods/JWMediaManager)
 [![License](https://img.shields.io/cocoapods/l/JWMediaManager.svg?style=flat)](http://cocoapods.org/pods/JWMediaManager)
 [![Platform](https://img.shields.io/cocoapods/p/JWMediaManager.svg?style=flat)](http://cocoapods.org/pods/JWMediaManager)
@@ -20,9 +20,30 @@ it, simply add the following line to your Podfile:
 pod "JWMediaManager"
 ```
 
+## Use
+
+Make sure to `import JWMediaManager` first.
+
+Add `MediaPlayerManagerDelegate` to your class.
+
+Create a manager instance
+
+```
+var mediaManager = MediaPlayerManager()
+```
+
+Make sure assign delegate `mediaManager.delegate = self`
+
+Set playlist and play index
+
+```
+mediaManager.setPlayer(with: playlist, playAt: index)
+```
+
+
 ## Author
 
-heilb1314@hotmail.com, heilb1314@hotmail.com
+heilb1314
 
 ## License
 
