@@ -1,8 +1,5 @@
-osx_image: xcode8
 language: objective-c
 
-xcode_sdk: iphonesimulator10.0
-
 script:
-- set -o pipefail && xcodebuild test -workspace Example/JWMediaManager.xcworkspace -scheme JWMediaManager-Example -sdk iphonesimulator10.0 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/JWMediaManager.xcworkspace -scheme JWMediaManager-Example
 - pod lib lint
