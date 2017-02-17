@@ -40,6 +40,11 @@ Set playlist and play index
 mediaManager.setPlayer(with: playlist, playAt: index)
 ```
 
+Support 3 Different play modes
+* `PlayMode.loop` Play continuously in order
+* `PlayMode.one` Repeat single one
+* `PlayMode.shuffle` Shuffle playlist.
+
 
 ## Author
 
