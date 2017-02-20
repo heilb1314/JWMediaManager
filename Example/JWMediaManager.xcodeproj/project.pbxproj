@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FD3B59868E57E02113B3FF6 /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EAA0B659623C2A3C1DD2EE /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework */; };
+		26B32A2A6E1B46DAAB21EBF9 /* Pods_JWMediaManager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E283C5009F762BD3FC242C /* Pods_JWMediaManager_Example.framework */; };
 		26BF97771E562CE4003FEABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26BF97701E562CE4003FEABB /* Assets.xcassets */; };
 		26BF97781E562CE4003FEABB /* becauseOfYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26BF97711E562CE4003FEABB /* becauseOfYou.mp3 */; };
 		26BF97791E562CE4003FEABB /* heartbeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26BF97721E562CE4003FEABB /* heartbeat.mp3 */; };
@@ -19,8 +19,7 @@
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		67CA89C791B179A1425F7B28 /* Pods_JWMediaManager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A397BD74F32F408D84B3BF /* Pods_JWMediaManager_Example.framework */; };
-		863C0DB28821D05357EEA5D9 /* Pods_JWMediaManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767282599344E719DAE16C9A /* Pods_JWMediaManager_Tests.framework */; };
+		70989A2BFF63F3D164FAA98B /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952B9273FA3E64A8906067C3 /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2487CB13ADD16B2DDAA7427E /* Pods-JWMediaManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Example/Pods-JWMediaManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		16E283C5009F762BD3FC242C /* Pods_JWMediaManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JWMediaManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26BF97701E562CE4003FEABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26BF97711E562CE4003FEABB /* becauseOfYou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = becauseOfYou.mp3; sourceTree = "<group>"; };
 		26BF97721E562CE4003FEABB /* heartbeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = heartbeat.mp3; sourceTree = "<group>"; };
@@ -43,9 +42,9 @@
 		26BF97751E562CE4003FEABB /* stronger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stronger.mp3; sourceTree = "<group>"; };
 		26BF97761E562CE4003FEABB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		26F495B01E5A54A90043241B /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
-		34053588706CA19853953DF6 /* Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Example-JWMediaManager_Tests/Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		361A0682019B09A73F34B733 /* Pods-JWMediaManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Tests/Pods-JWMediaManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		47EAA0B659623C2A3C1DD2EE /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JWMediaManager_Example_JWMediaManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3855BF67860469D9047E0C20 /* Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Example-JWMediaManager_Tests/Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BDA0EA99E25C28EAED0BC0C /* Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Example-JWMediaManager_Tests/Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5F9D4203B7CC20B584A6D4FA /* Pods-JWMediaManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Example/Pods-JWMediaManager_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* JWMediaManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JWMediaManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,14 +52,11 @@
 		607FACE51AFB9204008FA782 /* JWMediaManager_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWMediaManager_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		70A397BD74F32F408D84B3BF /* Pods_JWMediaManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JWMediaManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		767282599344E719DAE16C9A /* Pods_JWMediaManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JWMediaManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		952B9273FA3E64A8906067C3 /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JWMediaManager_Example_JWMediaManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F47D8E5C40EC29E9D32BE6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A24F4AF3DCE73C2E3792D8A5 /* JWMediaManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JWMediaManager.podspec; path = ../JWMediaManager.podspec; sourceTree = "<group>"; };
 		BF8328FE53E47FFCEF373E43 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		D371AF65D7817379EF4E79A5 /* Pods-JWMediaManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Example/Pods-JWMediaManager_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F674BD6E2FD38A3EE20BBB5A /* Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Example-JWMediaManager_Tests/Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FC4DF70866830CA89C860507 /* Pods-JWMediaManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Tests/Pods-JWMediaManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CFEBD013C8C17C91BC6FEF83 /* Pods-JWMediaManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWMediaManager_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JWMediaManager_Example/Pods-JWMediaManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67CA89C791B179A1425F7B28 /* Pods_JWMediaManager_Example.framework in Frameworks */,
+				26B32A2A6E1B46DAAB21EBF9 /* Pods_JWMediaManager_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863C0DB28821D05357EEA5D9 /* Pods_JWMediaManager_Tests.framework in Frameworks */,
-				0FD3B59868E57E02113B3FF6 /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework in Frameworks */,
+				70989A2BFF63F3D164FAA98B /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +96,8 @@
 				607FACD21AFB9204008FA782 /* Example for JWMediaManager */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				C6E589CE48E47366C8E6BECB /* Pods */,
-				EF5D552653A6C862A43685BC /* Frameworks */,
+				F7A64E39D8B8529C9F1F3909 /* Pods */,
+				B22A5C1293A21F80F99185A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,27 +162,24 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		C6E589CE48E47366C8E6BECB /* Pods */ = {
+		B22A5C1293A21F80F99185A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2487CB13ADD16B2DDAA7427E /* Pods-JWMediaManager_Example.debug.xcconfig */,
-				D371AF65D7817379EF4E79A5 /* Pods-JWMediaManager_Example.release.xcconfig */,
-				FC4DF70866830CA89C860507 /* Pods-JWMediaManager_Tests.debug.xcconfig */,
-				361A0682019B09A73F34B733 /* Pods-JWMediaManager_Tests.release.xcconfig */,
-				F674BD6E2FD38A3EE20BBB5A /* Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig */,
-				34053588706CA19853953DF6 /* Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		EF5D552653A6C862A43685BC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				70A397BD74F32F408D84B3BF /* Pods_JWMediaManager_Example.framework */,
-				767282599344E719DAE16C9A /* Pods_JWMediaManager_Tests.framework */,
-				47EAA0B659623C2A3C1DD2EE /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework */,
+				16E283C5009F762BD3FC242C /* Pods_JWMediaManager_Example.framework */,
+				952B9273FA3E64A8906067C3 /* Pods_JWMediaManager_Example_JWMediaManager_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7A64E39D8B8529C9F1F3909 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFEBD013C8C17C91BC6FEF83 /* Pods-JWMediaManager_Example.debug.xcconfig */,
+				5F9D4203B7CC20B584A6D4FA /* Pods-JWMediaManager_Example.release.xcconfig */,
+				3855BF67860469D9047E0C20 /* Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig */,
+				3BDA0EA99E25C28EAED0BC0C /* Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,12 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "JWMediaManager_Example" */;
 			buildPhases = (
-				56D874CC93F588A833944E60 /* [CP] Check Pods Manifest.lock */,
+				F3C5E02A95F68CEA5CCABE8B /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				55235747AE5E43B56852FAA5 /* [CP] Embed Pods Frameworks */,
-				8C177BDB9E2907EB2C6B5F17 /* [CP] Copy Pods Resources */,
+				541312BAF382351E47F31676 /* [CP] Embed Pods Frameworks */,
+				7565A00B3089E6AC46310957 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,12 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "JWMediaManager_Tests" */;
 			buildPhases = (
-				B90B1E63F2C2E3A6817E660F /* [CP] Check Pods Manifest.lock */,
+				FC848550A970DCC82015C14E /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				4D380AD94FC578E79F31DAE1 /* [CP] Embed Pods Frameworks */,
-				E83C01C17DA116F217B9149B /* [CP] Copy Pods Resources */,
+				266BB94A4C18B15A9F41FDD0 /* [CP] Embed Pods Frameworks */,
+				98B5DF98497591A4571DAA8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,7 +233,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -299,7 +291,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4D380AD94FC578E79F31DAE1 /* [CP] Embed Pods Frameworks */ = {
+		266BB94A4C18B15A9F41FDD0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -314,7 +306,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JWMediaManager_Example-JWMediaManager_Tests/Pods-JWMediaManager_Example-JWMediaManager_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		55235747AE5E43B56852FAA5 /* [CP] Embed Pods Frameworks */ = {
+		541312BAF382351E47F31676 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -329,22 +321,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JWMediaManager_Example/Pods-JWMediaManager_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		56D874CC93F588A833944E60 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8C177BDB9E2907EB2C6B5F17 /* [CP] Copy Pods Resources */ = {
+		7565A00B3089E6AC46310957 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,7 +336,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JWMediaManager_Example/Pods-JWMediaManager_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B90B1E63F2C2E3A6817E660F /* [CP] Check Pods Manifest.lock */ = {
+		98B5DF98497591A4571DAA8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JWMediaManager_Example-JWMediaManager_Tests/Pods-JWMediaManager_Example-JWMediaManager_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3C5E02A95F68CEA5CCABE8B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,19 +366,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E83C01C17DA116F217B9149B /* [CP] Copy Pods Resources */ = {
+		FC848550A970DCC82015C14E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JWMediaManager_Example-JWMediaManager_Tests/Pods-JWMediaManager_Example-JWMediaManager_Tests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -446,8 +438,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -491,8 +485,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -511,13 +507,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2487CB13ADD16B2DDAA7427E /* Pods-JWMediaManager_Example.debug.xcconfig */;
+			baseConfigurationReference = CFEBD013C8C17C91BC6FEF83 /* Pods-JWMediaManager_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
@@ -534,7 +531,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D371AF65D7817379EF4E79A5 /* Pods-JWMediaManager_Example.release.xcconfig */;
+			baseConfigurationReference = 5F9D4203B7CC20B584A6D4FA /* Pods-JWMediaManager_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
@@ -551,12 +548,9 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F674BD6E2FD38A3EE20BBB5A /* Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig */;
+			baseConfigurationReference = 3855BF67860469D9047E0C20 /* Pods-JWMediaManager_Example-JWMediaManager_Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -571,12 +565,9 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34053588706CA19853953DF6 /* Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig */;
+			baseConfigurationReference = 3BDA0EA99E25C28EAED0BC0C /* Pods-JWMediaManager_Example-JWMediaManager_Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
