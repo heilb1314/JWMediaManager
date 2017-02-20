@@ -1,5 +1,5 @@
 PODS:
-  - JWMediaManager (0.1.1)
+  - JWMediaManager (0.1.2)
   - Nimble (6.0.1)
 
 DEPENDENCIES:
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JWMediaManager: 077df00d1dfd05e3f32f1b2924bb7484e2bbe7a0
+  JWMediaManager: 3ba8ff8053d347967afb3a585c8252d39f886167
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
 
 PODFILE CHECKSUM: 5441cf08ba93f59b462e2e02d981aab5a18f7649
