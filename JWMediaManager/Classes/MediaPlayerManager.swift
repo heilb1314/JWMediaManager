@@ -9,11 +9,11 @@
 import Foundation
 import AVFoundation
 
-public enum PlayerStatus {
+public enum PlayerStatus:Int {
     case none, buffering, playing, paused
 }
 
-public enum PlayMode {
+public enum PlayMode:Int {
     case loop, one, shuffle
 }
 
@@ -62,60 +62,77 @@ public protocol MediaPlayerManagerDelegate:class {
 public class MediaPlayerManager:NSObject
 {
 
-    // MARK: USER Settings
+    // MARK: Public Fields
 
     /// looping playlist or not. If true, when index passes the largest index, the index goes back to 0, and vice versa.
     public var loopingPlaylist:Bool = true
 
     /// If true, next play item will be loaded automatically after the previous one.
     public var autoNextPlay:Bool = true
+    
+    /// Resume play after Interruption
+    public var autoResumeAfterInterruptEvent:Bool = true
+    
+    /// Media Player Manager Delegate
+    public weak var delegate: MediaPlayerManagerDelegate?
+    
+    /// Play mode
+    public var playMode:PlayMode = .loop
 
+    /// Player status
+    public fileprivate(set) var status:PlayerStatus = .none {
+        didSet {
+            if oldValue != status {
+                self.delegate?.mediaPlayerStatusDidChange(sender: self, status: self.status)
+            }
+        }
+    }
+    
+    /// Player
+    public fileprivate(set) lazy var player:AVPlayer = AVPlayer()
+
+    /// PlayerItem
+    public fileprivate(set) var playerItem:AVPlayerItem?
+
+    /// Playlist
+    public fileprivate(set) lazy var playlist:[URL] = [URL]()
+
+    /// Play index
+    public fileprivate(set) lazy var playIndex: Int = 0
+
+    /// Current play time
+    public fileprivate(set) lazy var currentTime:Double = 0.0
+
+    /// Current play duration
+    public fileprivate(set) lazy var duration:Double = 0.0
+
+    /// Current play available duration
+    public fileprivate(set) lazy var availableDuration:Double = 0.0
+
+    
+    // MARK: Private Fields
+    
+    // Key-value observing context
+    fileprivate var playerItemContext = 0
+    
+    /// Time Observer token for periodic time observer for the player. Use this property to remove the time observer.
+    fileprivate var timeObserverToken:Any?
+    
+    
+    // MARK: Init and Deinit
+    
     public override init() {
         super.init()
         NotificationCenter.default.addObserver(self, selector: #selector(receiveInterruptEvent), name: NSNotification.Name.AVAudioSessionInterruption, object: nil)
     }
-
+    
     deinit {
+        if playerItem != nil {
+            removeNotificationsAndObservations()
+        }
         NotificationCenter.default.removeObserver(self)
     }
 
-    // Key-value observing context
-    fileprivate var playerItemContext = 0
-
-    /// Player status
-    fileprivate var status:PlayerStatus = .none
-
-    /// Play mode
-    fileprivate var playMode:PlayMode = .loop
-    
-    /// Player
-    fileprivate lazy var player:AVPlayer = AVPlayer()
-
-    /// PlayerItem
-    fileprivate var playerItem:AVPlayerItem?
-
-    /// Playlist
-    fileprivate lazy var playlist:[URL] = [URL]()
-    
-    /// Shuffled Indexes
-    fileprivate var shuffledPlaylist:[URL]?
-
-    /// Play index
-    fileprivate lazy var playIndex: Int = 0
-
-    /// Current play time
-    fileprivate var currentTime:Double = 0.0
-
-    /// Current play duration
-    fileprivate var duration:Double = 0.0
-
-    /// Current play available duration
-    fileprivate var availableDuration:Double = 0.0
-
-    /// Time Observer token for periodic time observer for the player. Use this property to remove the time observer.
-    fileprivate var timeObserverToken:Any?
-
-    public weak var delegate: MediaPlayerManagerDelegate?
 
     // MARK: Setup methods
 
@@ -156,6 +173,7 @@ public class MediaPlayerManager:NSObject
 
         // Associate the player item with the player
         player = AVPlayer(playerItem: self.playerItem)
+        self.status = .buffering
     }
 
 
@@ -185,7 +203,7 @@ public class MediaPlayerManager:NSObject
     ///
     /// - Parameter index: new index
     public func setPlayIndex(to index:Int) {
-        guard !getPlaylist().isEmpty else { return }
+        guard !playlist.isEmpty else { return }
         guard loopingPlaylist || (index >= 0 && index < self.playlist.count) else { return }
         self.playIndex = index < 0 ? (self.playlist.count - 1) : (index < self.playlist.count ? index : 0)
         prepareToPlay()
@@ -194,12 +212,6 @@ public class MediaPlayerManager:NSObject
     /// Set the playlist with given list
     fileprivate func setPlaylist(to list:[URL]) {
         self.playlist = list
-    }
-
-    /// Set the player status to given status
-    fileprivate func setPlayerStatus(to status: PlayerStatus) {
-        self.status = status
-        self.delegate?.mediaPlayerStatusDidChange(sender: self, status: self.status)
     }
 
     /// Set the current play time to given time
@@ -223,40 +235,10 @@ public class MediaPlayerManager:NSObject
 
     // MARK: - Accessors
 
-    /// get player status
-    public func getPlayerStatus() -> PlayerStatus {
-        return self.status
-    }
-
-    /// get current playlist
-    public func getPlaylist() -> [URL] {
-        return self.playlist
-    }
-
-    /// get current play index
-    public func getPlayIndex() -> Int {
-        return self.playIndex
-    }
-
     /// get current play URL
     public func getPlayURL() -> URL? {
-        guard self.getPlayIndex() < self.getPlaylist().count else { return nil }
-        return (self.getPlayMode() == .shuffle ? self.getShuffledPlaylist() : self.getPlaylist())[self.getPlayIndex()]
-    }
-
-    /// get current play time
-    public func getCurrentTime() -> Double {
-        return self.currentTime
-    }
-
-    /// Get duration
-    public func getDuration() -> Double {
-        return self.duration
-    }
-
-    /// Get available duration
-    public func getAvailableDuration() -> Double {
-        return self.availableDuration
+        guard self.playIndex >= 0 && self.playIndex < self.playlist.count else { return nil }
+        return self.playlist[self.playIndex]
     }
 
     // MARK: - Remote Control Methods
@@ -273,39 +255,41 @@ public class MediaPlayerManager:NSObject
         }
         guard playerItem != nil else { return }
         self.player.play()
-        self.setPlayerStatus(to: .playing)
+        self.status = .playing
     }
 
     /// Pauses playback of the current item.
     public func pause() {
         self.player.pause()
-        self.setPlayerStatus(to: .paused)
+        self.status = .paused
     }
 
     /// Play next item in playlist
     public func next() {
-        self.setPlayIndex(to: self.getPlayIndex() + 1)
+        self.setPlayIndex(to: self.playMode == .shuffle ? self.getShufflePlayIndex() : self.playIndex + 1)
     }
 
     /// Play previous item in playlist
     public func previous() {
-        self.setPlayIndex(to: self.getPlayIndex() - 1)
+        self.setPlayIndex(to: self.playMode == .shuffle ? self.getShufflePlayIndex() : self.playIndex - 1)
     }
     
     /// Check if there is next media to play
     public func hasNext() -> Bool {
-        if self.getPlaylist().isEmpty { return false }
+        if self.playlist.isEmpty { return false }
+        if self.playMode == .shuffle { return true }
         if !loopingPlaylist {
-            return self.getPlayIndex() < self.getPlaylist().count - 1
+            return self.playIndex < self.playlist.count - 1
         }
         return true
     }
     
     /// Check if there is previous media to play
     public func hasPrevious() -> Bool {
-        if self.getPlaylist().isEmpty { return false }
+        if self.playlist.isEmpty { return false }
+        if self.playMode == .shuffle { return true }
         if !loopingPlaylist {
-            return self.getPlayIndex() > 0
+            return self.playIndex > 0
         }
         return true
     }
@@ -348,6 +332,7 @@ extension MediaPlayerManager {
 
     /// remove all notifications nad observers for playerItem
     fileprivate func removeNotificationsAndObservations() {
+        self.status = .none
         // remove time observer and reset time, duration and availableDuration
         if timeObserverToken != nil {
             self.player.removeTimeObserver(timeObserverToken!)
@@ -381,23 +366,24 @@ extension MediaPlayerManager {
             // Switch over the status
             switch status {
             case .readyToPlay:
-                self.setPlayerStatus(to: .buffering)
                 self.setDuration()
                 self.addPeriodicTimeObserver()
-                self.play()
+                if self.status != .paused {
+                    self.play()
+                }
             case .failed:
                 self.pause()
             case .unknown:
                 self.pause()
             }
         } else if keyPath == #keyPath(AVPlayerItem.isPlaybackBufferEmpty) {
-            if self.getPlayerStatus() == .playing && self.getAvailableDuration() > self.getCurrentTime() {
+            if self.status == .playing && self.availableDuration > self.currentTime {
                 play()
             } else {
                 pause()
             }
         } else if keyPath == #keyPath(AVPlayerItem.isPlaybackLikelyToKeepUp) {
-            if self.getPlayerStatus() == .buffering && self.getAvailableDuration() > self.getCurrentTime() {
+            if self.status == .buffering && self.availableDuration > self.currentTime {
                 play()
             }
         } else if keyPath == #keyPath(AVPlayerItem.loadedTimeRanges) {
@@ -408,7 +394,7 @@ extension MediaPlayerManager {
     /// Resume Audio Session when interruption ends
     func receiveInterruptEvent(_ notification: Notification) {
         guard notification.name == Notification.Name.AVAudioSessionInterruption else { return }
-        if (notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? NSNumber)?.uintValue == AVAudioSessionInterruptionType.ended.rawValue {
+        if self.autoResumeAfterInterruptEvent && (notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? NSNumber)?.uintValue == AVAudioSessionInterruptionType.ended.rawValue {
             self.play()
         }
     }
@@ -421,7 +407,7 @@ extension MediaPlayerManager {
             return
         }
         if autoNextPlay {
-            switch self.getPlayMode() {
+            switch self.playMode {
             case .loop, .shuffle:
                 self.next()
             case .one:
@@ -434,65 +420,19 @@ extension MediaPlayerManager {
 }
 
 
+// MARK: - Play mode extension
+
 extension MediaPlayerManager {
     
-    /// set play mode
-    public func setPlayMode(to mode: PlayMode) {
-        self.playMode = mode
+    /// get shuffle play index.
+    fileprivate func getShufflePlayIndex() -> Int {
+        guard self.playlist.count > 1 else { return 0 }
+        var randIndex = 0
+        repeat {
+            randIndex = Int(arc4random_uniform(UInt32(self.playlist.count)))
+        } while randIndex == self.playIndex
+        return randIndex
     }
-    
-    /// get play mode
-    public func getPlayMode() -> PlayMode {
-        return self.playMode
-    }
-    
-    /// get shuffled playlist
-    public func getShuffledPlaylist() -> [URL] {
-        if self.shuffledPlaylist == nil {
-            initShuffledPlaylist()
-        }
-        return self.shuffledPlaylist!
-    }
-    
-    
-    /// Initialize shuffled playlist
-    fileprivate func initShuffledPlaylist() {
-        if self.getPlaylist().count < 2 {
-            self.shuffledPlaylist = self.playlist
-        } else {
-            repeat {
-                self.shuffledPlaylist = self.getPlaylist().shuffled()
-            } while self.shuffledPlaylist! == self.playlist
-            
-        }
-    }
-    
     
 }
 
-
-// MARK: Extensions for Shuffle Array
-
-extension MutableCollection where Index == Int {
-    /// Shuffle the elements of `self` in-place.
-    mutating func shuffle() {
-        // empty and single-element collections don't shuffle
-        if count < 2 { return }
-        
-        for i in startIndex ..< endIndex - 1 {
-            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
-            if i != j {
-                swap(&self[i], &self[j])
-            }
-        }
-    }
-}
-
-extension Collection {
-    /// Return a copy of `self` with its elements shuffled
-    func shuffled() -> [Iterator.Element] {
-        var list = Array(self)
-        list.shuffle()
-        return list
-    }
-}
