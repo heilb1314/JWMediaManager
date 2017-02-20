@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JWMediaManager'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A custom AVPlayer Manager'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ JWMediaManager give the functionalities for AVPlayer more easy to use.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'JWMediaManager/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'JWMediaManager' => ['JWMediaManager/Assets/*.png']
   # }
