@@ -1,11 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'JWMediaManager_Example' do
   pod 'JWMediaManager', :path => '../'
 
   target 'JWMediaManager_Tests' do
-    inherit! :search_paths
+#    inherit! :search_paths
+    pod 'Nimble', '~> 6.0.0'
 
-    
   end
 end

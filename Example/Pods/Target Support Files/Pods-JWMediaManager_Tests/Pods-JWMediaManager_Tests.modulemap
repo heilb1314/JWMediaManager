@@ -1,6 +1,0 @@
-framework module Pods_JWMediaManager_Tests {
-  umbrella header "Pods-JWMediaManager_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

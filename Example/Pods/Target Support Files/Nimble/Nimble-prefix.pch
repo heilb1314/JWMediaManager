@@ -10,7 +10,3 @@
 #endif
 #endif
 
-
-FOUNDATION_EXPORT double Pods_JWMediaManager_TestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_JWMediaManager_TestsVersionString[];
-
