@@ -1,5 +1,4 @@
 language: objective-c
 
 script:
-- set -o pipefail && xcodebuild test -workspace Example/JWMediaManager.xcworkspace -scheme JWMediaManager-Example
-- pod lib lint
+- set -o pipefail && cd Example && xcodebuild -workspace JWMediaManager.xcworkspace -scheme JWMediaManager-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
