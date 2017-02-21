@@ -26,29 +26,67 @@ pod "JWMediaManager"
 
 ## Usage
 
-Make sure to `import JWMediaManager` first.
+```swift
+import JWMediaManager
+```
 
 Add `MediaPlayerManagerDelegate` to your class.
 
-Create a manager instance
+###Create a manager instance
 
-```
+```swift
 var mediaManager = MediaPlayerManager()
 ```
 
 Make sure assign delegate `mediaManager.delegate = self`
 
-Set playlist and play index
+###Set playlist and/or play index
 
-```
+```swift
 mediaManager.setPlayer(with: playlist, playAt: index)
 ```
 
-Support 3 Different play modes
+###Support 3 Different play modes
 * `PlayMode.loop` Play continuously in order
 * `PlayMode.one` Repeat single one
 * `PlayMode.shuffle` Shuffle playlist.
 
+###MediaPlayerManagerDelegate
+* Continuously play time update
+
+    ```swift
+    func mediaPlayerPlayTimeDidChange(sender: MediaPlayerManager, time: Double) {
+    // update current time
+    }
+    ```
+* PlayerItem duration change
+
+    ```swift
+    func mediaPlayerDurationDidChange(sender: MediaPlayerManager, duration: Double) {
+    // update duration
+    }
+    ```
+* PlayerItem already downloaded duration change
+
+    ```swift
+    func mediaPlayerAvailableDurationDidChange(sender: MediaPlayerManager, duration: Double) {
+    // update available duration
+    }
+    ```
+* Player Status change
+
+    ```swift
+    func mediaPlayerStatusDidChange(sender: MediaPlayerManager, status: PlayerStatus) {
+    // update player UI
+    }
+    ```
+* Player item change
+
+    ```swift
+    func mediaPlayerPlayURLDidChange(sender: MediaPlayerManager, playURL: URL?) {
+    // Playeritem has changed
+    }
+    ```
 
 ## Author
 
