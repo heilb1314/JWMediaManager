@@ -280,29 +280,29 @@ class Tests: XCTestCase {
 
 extension Tests: MediaPlayerManagerDelegate {
     
-    func mediaPlayerPlayTimeDidChange(sender: MediaPlayerManager, time: Double) {
+    func mediaPlayerPlayTimeDidChange(_ sender: MediaPlayerManager, time: Double) {
         print("Time changed: \(time)")
         NotificationCenter.default.post(testNotificationPlayTimeDidChange)
     }
     
-    func mediaPlayerPlayURLDidChange(sender: MediaPlayerManager, playURL: URL?) {
+    func mediaPlayerPlayURLDidChange(_ sender: MediaPlayerManager, playURL: URL?) {
         print("Play url did change: \(playURL?.path)")
         self.playerURLDidChangeContext += 1
 //        NotificationCenter.default.post(testNotificationPlayURLDidChange)
     }
     
-    func mediaPlayerDurationDidChange(sender: MediaPlayerManager, duration: Double) {
+    func mediaPlayerDurationDidChange(_ sender: MediaPlayerManager, duration: Double) {
         print("Play Duration changed: \(duration)")
         NotificationCenter.default.post(testNotificationPlayDurationDidChange)
     }
     
-    func mediaPlayerStatusDidChange(sender: MediaPlayerManager, status: PlayerStatus) {
+    func mediaPlayerStatusDidChange(_ sender: MediaPlayerManager, status: PlayerStatus) {
         print("Player Status did change: \(status)")
         NotificationCenter.default.post(testNotificationPlayStatusDidChange)
 
     }
     
-    func mediaPlayerAvailableDurationDidChange(sender: MediaPlayerManager, duration: Double) {
+    func mediaPlayerAvailableDurationDidChange(_ sender: MediaPlayerManager, duration: Double) {
         print("Available duration changed: \(duration)")
         NotificationCenter.default.post(testNotificationPlayAvailableDurationDidChange)
 

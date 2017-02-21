@@ -121,22 +121,22 @@ extension ViewController: MediaPlayerManagerDelegate {
         return String(format: format, arguments: args)
     }
     
-    func mediaPlayerPlayURLDidChange(sender: MediaPlayerManager, playURL: URL?) {
+    func mediaPlayerPlayURLDidChange(_ sender: MediaPlayerManager, playURL: URL?) {
         self.urlLabel.text = playURL?.lastPathComponent
     }
     
-    func mediaPlayerPlayTimeDidChange(sender: MediaPlayerManager, time: Double) {
+    func mediaPlayerPlayTimeDidChange(_ sender: MediaPlayerManager, time: Double) {
         self.currentTimeLabel.text = getReadableTimeString(withDurationInSeconds: Int(time))
         if !self.slider.isHighlighted {
             self.slider.value = Float(time / playerManager.duration)
         }
     }
     
-    func mediaPlayerDurationDidChange(sender: MediaPlayerManager, duration: Double) {
+    func mediaPlayerDurationDidChange(_ sender: MediaPlayerManager, duration: Double) {
         self.durationLabel.text = getReadableTimeString(withDurationInSeconds: Int(duration))
     }
     
-    func mediaPlayerStatusDidChange(sender: MediaPlayerManager, status: PlayerStatus) {
+    func mediaPlayerStatusDidChange(_ sender: MediaPlayerManager, status: PlayerStatus) {
         if status == .none {
             slider.isUserInteractionEnabled = false
             playPauseButton.isUserInteractionEnabled = false
@@ -151,7 +151,7 @@ extension ViewController: MediaPlayerManagerDelegate {
         playPauseButton.setImage(UIImage(named: status == .playing ? "ic_pause" : "ic_play"), for: UIControlState())
     }
     
-    func mediaPlayerAvailableDurationDidChange(sender: MediaPlayerManager, duration: Double) {
+    func mediaPlayerAvailableDurationDidChange(_ sender: MediaPlayerManager, duration: Double) {
         self.slider.updateBufferProgress(withProgress: Float(duration / playerManager.duration))
     }
 }

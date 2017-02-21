@@ -24,7 +24,7 @@ public protocol MediaPlayerManagerDelegate:class {
     /// - Parameters:
     ///   - sender: MediaPlayerManager
     ///   - time: the new play time
-    func mediaPlayerPlayTimeDidChange(sender: MediaPlayerManager, time:Double)
+    func mediaPlayerPlayTimeDidChange(_ sender: MediaPlayerManager, time:Double)
 
 
     /// Player current play item duration did change
@@ -32,7 +32,7 @@ public protocol MediaPlayerManagerDelegate:class {
     /// - Parameters:
     ///   - sender: MediaPlayerManager
     ///   - duration: new duration
-    func mediaPlayerDurationDidChange(sender: MediaPlayerManager, duration: Double)
+    func mediaPlayerDurationDidChange(_ sender: MediaPlayerManager, duration: Double)
 
 
     /// Player current play item available duration did change
@@ -40,7 +40,7 @@ public protocol MediaPlayerManagerDelegate:class {
     /// - Parameters:
     ///   - sender: MediaPlayerManager
     ///   - duration: new available duration
-    func mediaPlayerAvailableDurationDidChange(sender: MediaPlayerManager, duration: Double)
+    func mediaPlayerAvailableDurationDidChange(_ sender: MediaPlayerManager, duration: Double)
 
 
     /// Player Status did change
@@ -48,42 +48,42 @@ public protocol MediaPlayerManagerDelegate:class {
     /// - Parameters:
     ///   - sender: MediaPlayerManager
     ///   - status: new status
-    func mediaPlayerStatusDidChange(sender: MediaPlayerManager, status: PlayerStatus)
+    func mediaPlayerStatusDidChange(_ sender: MediaPlayerManager, status: PlayerStatus)
 
     /// Player play item did change
     ///
     /// - Parameters:
     ///   - sender: MediaPlayerManager
     ///   - playItem: new playItem
-    func mediaPlayerPlayURLDidChange(sender: MediaPlayerManager, playURL: URL?)
+    func mediaPlayerPlayURLDidChange(_ sender: MediaPlayerManager, playURL: URL?)
 }
 
 
-public class MediaPlayerManager:NSObject
+open class MediaPlayerManager:NSObject
 {
 
     // MARK: Public Fields
 
     /// looping playlist or not. If true, when index passes the largest index, the index goes back to 0, and vice versa.
-    public var loopingPlaylist:Bool = true
+    open var loopingPlaylist:Bool = true
 
     /// If true, next play item will be loaded automatically after the previous one.
-    public var autoNextPlay:Bool = true
+    open var autoNextPlay:Bool = true
     
     /// Resume play after Interruption
-    public var autoResumeAfterInterruptEvent:Bool = true
+    open var autoResumeAfterInterruptEvent:Bool = true
     
     /// Media Player Manager Delegate
-    public weak var delegate: MediaPlayerManagerDelegate?
+    open weak var delegate: MediaPlayerManagerDelegate?
     
     /// Play mode
-    public var playMode:PlayMode = .loop
+    open var playMode:PlayMode = .loop
 
     /// Player status
     public fileprivate(set) var status:PlayerStatus = .none {
         didSet {
             if oldValue != status {
-                self.delegate?.mediaPlayerStatusDidChange(sender: self, status: self.status)
+                self.delegate?.mediaPlayerStatusDidChange(self, status: self.status)
             }
         }
     }
@@ -151,7 +151,7 @@ public class MediaPlayerManager:NSObject
     fileprivate func prepareToPlay() {
         guard let url = self.getPlayURL() else { return }
         self.pause()
-        delegate?.mediaPlayerPlayURLDidChange(sender: self, playURL: url)
+        delegate?.mediaPlayerPlayURLDidChange(self, playURL: url)
         removeNotificationsAndObservations()
         self.playerItem = nil
         setCurrentTime()
@@ -217,19 +217,19 @@ public class MediaPlayerManager:NSObject
     /// Set the current play time to given time
     fileprivate func setCurrentTime(to time: Double = 0.0) {
         self.currentTime = time
-        self.delegate?.mediaPlayerPlayTimeDidChange(sender: self, time: self.currentTime)
+        self.delegate?.mediaPlayerPlayTimeDidChange(self, time: self.currentTime)
     }
 
     /// Update the current play item duration
     fileprivate func setDuration() {
         self.duration = playerItem?.asset.duration.seconds ?? 0.0
-        self.delegate?.mediaPlayerDurationDidChange(sender: self, duration: self.duration)
+        self.delegate?.mediaPlayerDurationDidChange(self, duration: self.duration)
     }
 
     /// Update the current play item available duration
     fileprivate func setAvailableDuration(with newValue:Double?) {
         self.availableDuration = newValue ?? 0.0
-        self.delegate?.mediaPlayerAvailableDurationDidChange(sender: self, duration: self.availableDuration)
+        self.delegate?.mediaPlayerAvailableDurationDidChange(self, duration: self.availableDuration)
     }
     
 
@@ -347,7 +347,7 @@ extension MediaPlayerManager {
 
 
     /// KVO
-    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard context == &playerItemContext else {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
             return
